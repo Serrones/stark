@@ -1,10 +1,9 @@
   
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
-from simple_settings import settings
+from dynaconf import settings
 
-
-world = settings.WORLD
+world = settings.get('WORLD')
 
 
 app = FastAPI(
